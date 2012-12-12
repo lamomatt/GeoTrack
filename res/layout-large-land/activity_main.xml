@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Button_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/background"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/mainHeading"
+            android:textSize="20dp"
+            android:textStyle="italic|bold" />
+
+        <Button
+            android:id="@+id/butMainMapView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:onClick="onClick"
+            android:text="Get Current Location" />
+
+        <Button
+            android:id="@+id/butMainHistView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="View History" />
+
+        <Button
+            android:id="@+id/butMainStartBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:onClick="onClick"
+            android:text="Start service in Background" />
+
+        <Button
+            android:id="@+id/butMainStopBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:onClick="onClick"
+            android:text="Stop Service in Background"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <fragment
+        android:name="com.example.locactivity.LocationHistoryFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout="@layout/lochistoryview" />
+
+</LinearLayout>

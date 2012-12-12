@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">GeoTracker</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_loc">LocationActivity</string>
+    <string name="unknown">------------unknown--------------</string>
+    <string name="use_fine_provider">Fine-grain provider</string>
+    <string name="not_support_gps">GPS provider not supported</string>
+    <string name="mymap_activity">Track Yourself</string>
+    <string name="title_activity_main">Track Yourself</string>
+    <string name="mainHeading">Track Yourself</string>
+    <string name="local_service_started">Starting Location Service</string>
+	<string name="local_service_stopped">Stopping Location Service</string>
+	<string name="local_service_label">Location Service</string>
+	<string name="no_history">No History Found</string>
+	<string name="title_activity_showhistorymap">ShowHistoryMap</string>
+</resources>
