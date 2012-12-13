@@ -42,8 +42,8 @@ import android.widget.Toast;
 public class LocalService extends Service {
 	
 	private LocationManager mLocationManager;
-    private static final int TEN_SECONDS = 5000;
-    private static final int TEN_METERS = 10;
+    private static final int TIME = 600000;
+    private static final int DISTANCE = 300;
     private static final int TWO_MINUTES = 1000 * 60 * 2;
     private boolean mUseFine;
     DatabaseHandler db;
@@ -102,7 +102,7 @@ public class LocalService extends Service {
     private Location requestUpdatesFromProvider(final String provider, final int errorResId) {
         Location location = null;
         if (mLocationManager.isProviderEnabled(provider)) {
-            mLocationManager.requestLocationUpdates(provider, TEN_SECONDS, TEN_METERS, listener);
+            mLocationManager.requestLocationUpdates(provider, TIME, DISTANCE, listener);
             location = mLocationManager.getLastKnownLocation(provider);
             Log.i("LocalService", "requestUpdatesFromProvider: Write GPS data to DB, Lat: "+ location.getLatitude()+" Lon: "+location.getLongitude());
         } else {
