@@ -24,7 +24,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
+
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningTaskInfo;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -43,7 +47,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.locactivity.R;
+
 
 public class LocationHistoryFragment extends ListFragment{
 	
@@ -137,11 +141,13 @@ public class LocationHistoryFragment extends ListFragment{
     
     
     @Override
-    public void onStop(){
+    public void onPause(){
     	super.onStop();
+
         LinearLayout layout = (LinearLayout) getActivity().findViewById(R.id.activityMainButtons);
         Log.d("LocationHistoryFragment","onStop:orientation "+getResources().getConfiguration().orientation);
-        layout.setVisibility(View.VISIBLE);
+        if (layout != null)
+        	layout.setVisibility(View.VISIBLE);
         
     }
     

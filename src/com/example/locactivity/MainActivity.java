@@ -39,8 +39,14 @@ package com.example.locactivity;
  */
 
 
+
+
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
+import android.app.ActivityManager.RunningTaskInfo;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -75,13 +81,13 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-	     Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+/*	     Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
 	    	 public void uncaughtException(Thread paramThread, Throwable paramThrowable) {
 	             Log.e("MainActivity","onCreate: Uncaught Exception");
 	             Log.i("MainActivity","onCreate: Shutting down app");
 	             finish();
 	         }
-	     });
+	     });*/
 		try {
 			setContentView(R.layout.activity_main);
 		} catch (Resources.NotFoundException e) {
@@ -224,6 +230,29 @@ public class MainActivity extends FragmentActivity {
 		return true;
 	}
 	
+	@Override
+	public void onPause(){
+		super.onPause();
+		Log.i("MainActivity","onPause");
+/*        ArrayList<String> runningactivities = new ArrayList<String>();
+
+        ActivityManager activityManager = (ActivityManager)getSystemService (Context.ACTIVITY_SERVICE); 
+
+        List<RunningTaskInfo> services = activityManager.getRunningTasks(Integer.MAX_VALUE); 
+
+        for (int i1 = 0; i1 < services.size(); i1++) { 
+            runningactivities.add(0,services.get(i1).topActivity.toString());  
+            Log.i("LocationHistoryFragment",services.get(i1).topActivity.toString());
+        } 
+
+        if(runningactivities.contains("ComponentInfo{com.example.locactivity/com.example.locactivty.mainmapactivity}")==false){
+            LinearLayout layout = (LinearLayout) findViewById(R.id.activityMainButtons);
+            Log.d("LocationHistoryFragment","onStop:orientation "+getResources().getConfiguration().orientation);
+            layout.setVisibility(View.VISIBLE);
+            
+        }*/
+	}
+	
 /*Function:onResume
  * Start/Stop service is a toggle button, if service is running, stop button is shown, else start button is shown
  * 
@@ -241,6 +270,7 @@ public class MainActivity extends FragmentActivity {
 				Button but2 = (Button) findViewById(R.id.butMainStopBackground);
 				but2.setVisibility(View.VISIBLE);
 			}
+
 			
 	}
 	

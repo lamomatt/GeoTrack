@@ -23,6 +23,7 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 /*Class: MainMapActivity
